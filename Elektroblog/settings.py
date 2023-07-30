@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&-iws8k(1vndf7z!+ck2@-ohmj^v&whv#@2%rz0+iq$oafd1j%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -125,7 +125,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
     BASE_DIR / "rootstatic"
 ]
-MEDIA_ROOT=BASE_DIR / "uploads"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/images/"
 CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
 
