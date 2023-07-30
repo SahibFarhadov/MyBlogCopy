@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'img/brand.png' %}" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/root.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-icons.css'%}">
+        {% block styles %}{% endblock%}
+        <title>{%block title%}{%endblock%}</title>
+    </head>
+    <body>
+        {% include 'partials/_navbar.html' %}
+        {% block content %}{% endblock %}
+            <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        {%block scripts%}{%endblock%}
+        
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<ul class="nav nav-tabs" id="myTab">
+				<li class="nav-item">
+				  {%if is_hesab%}
+				  	<a class="nav-link active" href="{%url 'profile'%}"><strong>Hesab</strong></a>
+				  {%else%}
+				  	<a class="nav-link" href="{%url 'profile'%}"><strong>Hesab</strong></a>
+				  {%endif%}
+
+				</li>
+				<li class="nav-item">
+				  {%if is_meqalelerim %}
+				  	<a class="nav-link active" href="{%url 'hesab_meqaleleri'%}"><strong>Məqalələrim</strong></a>
+				  {%else%}
+				  	<a class="nav-link" href="{%url 'hesab_meqaleleri'%}"><strong>Məqalələrim</strong></a>
+				  {%endif%}
+				</li>
+			  </ul>
+		</div>
+	</div>
+</div>

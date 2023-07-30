@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'Account/css/style.css' %}">
+{% endblock  %}
+{% block title %}Elektroblog | Qeydiyyatdan keç{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mb-3">
+                <h2>Qeydiyyat səhifəsi</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form action="{%url 'register'%}" method="POST">
+            {%csrf_token%}
+            {%if errorMessage%}
+                <div class="alert alert-danger">
+                    {{errorMessage}}
+                </div>
+            {%endif%}
+            {%csrf_token%}
+            <div class="row mb-3">
+                <label for="name" class="col-form-label formLabelBold col-sm-2">Ad</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" placeholder="Adınızı daxil edin." value="{{name}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="surname" class="col-form-label formLabelBold col-sm-2">Soyad</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="surname" placeholder="Soyadınızı daxil edin." value="{{surname}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="nickname" class="col-form-label formLabelBold col-sm-2">İstifadəçi adı</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="nickname" placeholder="İstifadəçi adı daxil edin" value="{{nickname}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" class="col-form-label formLabelBold col-sm-2">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email" placeholder="Məsələn: mail@mail.com" value="{{email}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-form-label formLabelBold col-sm-2">Parol</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" placeholder="Parolunuzu daxil edin" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="repassword" class="col-form-label formLabelBold col-sm-2">Parol təkrarı</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="repassword" placeholder="Parolunuzu yenidən daxil edin" required>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success" value="Qeydiyyatdan keç">
+        </form>
+    </div>
+</div>
+{% endblock %}
+{%include 'blog/partials/_footer.html'%}

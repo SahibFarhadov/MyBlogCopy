@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{%block title%}Elektroblog | Hesab{%endblock%}
+
+{%block content%}
+  {%include "account/partials/_hesab.html"%}
+  
+  <div class="container">
+    <h3 class="mt-2 mb-3">Yazdığınız məqalələr buradadır</h3>
+    <div class="btn-group">
+      <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sırala</a>
+
+      <ul class="dropdown-menu">
+          <li><a class="dropdown-item {%if sort_string == 'titleofblogAZ'%} active {%endif%}" href="{%url 'meqale_sirala' 'titleofblogAZ' %}">Başlığa görə(A-Z)</a></li>
+
+          <li><a class="dropdown-item {%if sort_string == 'titleofblogZA'%} active {%endif%}" href="{%url 'meqale_sirala' 'titleofblogZA' %}">Başlığa görə(Z-A)</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item {%if sort_string == 'borndateacs'%} active {%endif%}" href="{%url 'meqale_sirala' 'borndateacs' %}">Yaradılma tarixinə görə artan</a></li>
+          <li><a class="dropdown-item {%if sort_string == 'borndatedec'%} active {%endif%}" href="{%url 'meqale_sirala' 'borndatedec' %}">Yaradılma tarixinə görə azalan</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item {%if sort_string == 'lastmodifiedacs'%} active {%endif%}" href="{%url 'meqale_sirala' 'lastmodifiedacs' %}">Redaktə tarixinə görə artan</a></li>
+          <li><a class="dropdown-item {%if sort_string == 'lastmodifieddec'%} active {%endif%}" href="{%url 'meqale_sirala' 'lastmodifieddec' %}">Redaktə tarixinə görə azalan</a></li>
+      </ul>
+    </div>
+    <div class="btn-group dropdown-center">
+      <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Göstər</a>
+
+      <ul class="dropdown-menu">
+          {%for gosterme_element in gosterme_elements %}
+            <li><a href="?gosterme_sayi={{gosterme_element}}" class="dropdown-item {%if gosterme_element == gosterme_sayi%}active{%endif%}">{{gosterme_element}}</a></li>
+          {%endfor%}
+      </ul>
+    </div>
+  {%if blogs%} <!-- Bloglarin oldugunu yoxlayan blogun baslangici -->
+  {%for blog in blogs%}
+<div class="card mb-3 mt-3 p-3">
+  <div class="row g-0 mt-1 ms-1">
+    <div class="col-md-4">
+      <a href="{% url 'blog-details' blog.slug %}">
+        <img src="{{blog.image.url}}" class="img-fluid rounded-start" alt="{{blog.title}}">
+      </a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="{% url 'blog-details' blog.slug %}">
+          <h5 class="card-title">{{blog.titleofblog}}</h5>
+        </a>
+        <p class="card-text">
+          Kateqoriya - <b style="color:rgb(100,100,100)">{{blog.category}}</b>
+        </p>
+        <p class="card-text">
+          <strong>Yaradıldı: </strong>{{blog.borndate|date:"j F o G:i"}}<br>
+          <strong>Redaktə edildi: </strong>{{blog.lastmodified|date:"j F o G:i"}}
+        </p>
+        {%if blog.user%}
+          <p class="card-text">
+            <a href="{%url 'meqale_yenile' blog.slug%}" class="btn btn-success">Redaktə et</a>
+            <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#silModal">Sil</button>
+
+            <div class="modal fade" id="silModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Məqalənin silinməsi</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <strong>{{blog.titleofblog}}</strong> başlıqlı məqalə silinəcək. Bu əməliyyat geri qaytarıla bilməz. Yenə də silmək istəyirsiniz?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Yox, məqalə dəyərlidir</button>
+                  <a type="button" class="btn btn-danger" href="{% url 'delete_blog' blog.slug %}">Hə sil!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </p>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+</div>
+  {%endfor%}
+  {%else%}
+    <div class="alert alert-primary">Sizin hələ məqaləniz yoxdur. Aşağıdakı linkdən birini yarada bilərsiniz </div><hr>
+    <h3>
+      <a href="{% url 'meqale_yaz' %}" class="btn btn-primary">
+        Yeni məqalə yaz
+      </a>
+    </h3>
+  {%endif%}
+
+  <div class="row">
+    {% include "Blog/partials/_pagination.html" %}
+  </div>
+
+</div>
+{%endblock%}

@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block title %}Elektroblog | Məqalə yaz  {% endblock %}
+{% block content %}
+	<div class="container mb-3" id="id_meqale_yaz">
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{form.media}}
+			{{form.as_p}}
+		    <input type="submit" value="Yadda saxla">
+		</form>
+	</div>
+{% endblock %}
+
+{%block scripts%}
+	<script type="text/javascript" src="{%static 'Blog/script/meqaleyaz.js'%}"></script>
+{%endblock%}

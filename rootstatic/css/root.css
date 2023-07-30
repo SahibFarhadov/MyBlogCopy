@@ -1,0 +1,30 @@
+.nav-item .nav-link strong:hover{
+    text-decoration: underline blue solid 2px;
+}
+.navbarLink{
+    font-size:20px;
+    color:rgb(53, 68, 235)
+}
+.kateqoriyaText{
+    color:green
+}
+.footer1{
+    position:relative;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    font-size: 16px;
+}
+.mailme address{
+    border-left: 4px solid red!important;
+    padding-left:10px;
+}
+.mailme p{
+    padding-left:10px;
+}
+
+@media screen and (max-width: 991px) {
+  #mvOffcanvasLink{
+    display: none;
+  }
+}

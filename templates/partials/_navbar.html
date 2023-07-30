@@ -1,0 +1,75 @@
+{%load static%}
+  <nav class="navbar bg-light sticky-top navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="{%url 'home'%}">
+        <img src="{%static 'img/brand.png'%}"  alt="brand" class="d-inline-block" width="48" height="48">
+        <strong style="font-size:25px;color:rgb(94, 76, 255)">Elektroblog</strong></a>
+      <button title="toggler_button" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel" style="font-family: monospace;">
+            {%if user.is_authenticated%}
+              <div>Salam, <b>{{user.first_name|title}}</b></div>
+            {%else%}
+              <div>Salam, Qonaq</div>
+            {%endif%}
+          </h3>
+          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close" style="font-size:20px;"></button>
+        </div>
+        <div class="offcanvas-body">
+          <hr>
+          <ul class="navbar-nav me-auto ">
+            {%if user.is_authenticated%}
+              <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}">
+                <strong class="navbarLink">
+                  Məqalə yaz
+                </strong>
+              </a>
+            {%endif%}
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-auto ">
+            {%if user.is_authenticated%}
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{%url 'profile' %}">
+                    <strong class="navbarLink">
+                      Hesab
+                    </strong>
+                  </a>
+              </li>
+              <li class="nav-item me-0">
+                <a class="nav-link" aria-current="page" href="{%url 'logout'%}">
+                  <strong class="navbarLink">
+                    Hesabdan çıx 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                      <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg>
+                  </strong>
+                </a>
+              </li>
+            {%else%}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{%url 'register'%}">
+                  <strong class="navbarLink">
+                    Qeydiyyatdan keç
+                  </strong>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{%url 'login'%}">
+                  <strong class="navbarLink">
+                    Daxil ol
+                  </strong>
+                </a>
+              </li>
+            {%endif%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

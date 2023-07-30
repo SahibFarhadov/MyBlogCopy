@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{%block title%}Elektroblog | Hesab{%endblock%}
+
+{%block content%}
+	{%include "account/partials/_hesab.html"%}
+	
+	<div class="container mt-3 mb-3">
+		<form method="post" class="mb-3">
+			{%csrf_token%}
+			<div class="mb-3">
+				{% for field in user_form%}
+					<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
+				{%endfor%}
+			</div>
+			<div class="mb-3">
+				{% for field in myuser_form%}
+					<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
+				{%endfor%}
+			</div>
+			<button class="btn btn-primary" type="submit">Yadda saxla</button>
+		</form>
+	</div>
+	
+{%endblock%}
+

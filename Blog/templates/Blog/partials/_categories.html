@@ -1,0 +1,26 @@
+<div class="accordion" id="categoryAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mycontent" aria-expandend="false" aria-controls="mycontent" style="padding:10px 10px 5px 10px">
+          <div class="h4">Kateqoriyalar</div>
+      </button>
+    </h2>
+    <div id="mycontent" class="accordion-collapse collapse show" data-bs-parent="#categoryAccordion">
+      <div class="accordion-body" style="padding:2px 0px 0px 0px">
+        <div class="list-group">
+          {% for category in categories %}
+            {% if category.slug == selectedCategory.slug %}
+              <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action active" style="text-align:left;">
+                <b>{{category.name}}</b>
+              </a>
+            {% else %}
+              <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action" style="text-align:left;">
+                <b>{{category.name}}</b>
+              </a>
+            {% endif %}
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
