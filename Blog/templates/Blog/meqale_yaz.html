@@ -6,8 +6,13 @@
 		<form method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{form.media}}
-			{{form.as_p}}
-		    <input type="submit" value="Yadda saxla">
+			<div class="mb-3">
+				{% for field in form%}
+					<label class="form-label">{{field.label}}:</label>
+					{{field}}<br>
+				{%endfor%}
+			</div>
+		    <input class="btn btn-success" type="submit" value="Yadda saxla">
 		</form>
 	</div>
 {% endblock %}

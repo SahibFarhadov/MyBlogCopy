@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&-iws8k(1vndf7z!+ck2@-ohmj^v&whv#@2%rz0+iq$oafd1j%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -138,7 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CKEDITOR_CONFIGS={
     'fullconfig':{
         'toolbar': 'full',
-        'height': 600,
-        'width': 1000,
+        'height': 400,
+        'width': 'full',
     }
 }

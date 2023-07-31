@@ -19,13 +19,16 @@ def hesab(request):
 			'is_hesab':True,
 			'user_form':user_form,
 			'myuser_form':myuser_form,
+			'message':""
 		}
 		if request.method=="POST":
 			user_form=UserForm(request.POST,instance=request.user)
 			myuser_form=MyUserForm(request.POST,instance=request.user.myuser)
 			user_form.save()
 			myuser_form.save()
-			return redirect("profile")
+			context['message']="Məlumatlar uğurla yeniləndi."
+			return render(request,"account/hesab.html",context)
+
 		return render(request,"account/hesab.html",context)
 	return redirect("login")
 

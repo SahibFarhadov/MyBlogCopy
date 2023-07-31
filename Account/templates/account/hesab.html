@@ -6,20 +6,36 @@
 	{%include "account/partials/_hesab.html"%}
 	
 	<div class="container mt-3 mb-3">
-		<form method="post" class="mb-3">
-			{%csrf_token%}
-			<div class="mb-3">
-				{% for field in user_form%}
-					<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
-				{%endfor%}
+		{%if message %}
+			<div class="row">
+				<div class="col">
+					<div class="alert alert-success alert-dismissible fade show">
+						{{message}}
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				</div>
 			</div>
-			<div class="mb-3">
-				{% for field in myuser_form%}
-					<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
-				{%endfor%}
+		{%endif%}
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-6">
+				<form method="post" class="mb-3">
+					{%csrf_token%}
+					<div class="mb-3">
+						{% for field in user_form%}
+							<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
+						{%endfor%}
+					</div>
+					<div class="mb-3">
+						{% for field in myuser_form%}
+							<label class="form-label">{{field.label}}:</label><br>{{field}}<br>
+						{%endfor%}
+					</div>
+					<button class="btn btn-primary" type="submit">Yadda saxla</button>
+				</form>
 			</div>
-			<button class="btn btn-primary" type="submit">Yadda saxla</button>
-		</form>
+			<div class="col"></div>
+		</div>
 	</div>
 	
 {%endblock%}
