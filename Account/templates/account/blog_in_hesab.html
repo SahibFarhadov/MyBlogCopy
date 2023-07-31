@@ -84,7 +84,7 @@
 </div>
   {%endfor%}
   {%else%}
-    <div class="alert alert-primary">Sizin hələ məqaləniz yoxdur. Aşağıdakı linkdən birini yarada bilərsiniz </div><hr>
+    <div class="alert alert-primary mt-3">Sizin hələ məqaləniz yoxdur. Aşağıdakı linkdən birini yarada bilərsiniz </div><hr>
     <h3>
       <a href="{% url 'meqale_yaz' %}" class="btn btn-primary">
         Yeni məqalə yaz
@@ -92,9 +92,13 @@
     </h3>
   {%endif%}
 
-  <div class="row">
-    {% include "Blog/partials/_pagination.html" %}
-  </div>
+  {%if blogs%}
+    <div class="row mb-3">
+        <div class="col">
+            {%include 'Blog/partials/_pagination.html'%}
+        </div>
+    </div>
+    {%endif%}
 
 </div>
 {%endblock%}

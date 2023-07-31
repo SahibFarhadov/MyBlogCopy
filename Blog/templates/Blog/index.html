@@ -33,10 +33,12 @@
             {% endfor %}
         </div>
     </div>
+    {%if blogs%}
     <div class="row mb-3">
         <div class="col">
             {%include 'Blog/partials/_pagination.html'%}
         </div>
     </div>
+    {%endif%}
 </div>
 {% endblock %}
