@@ -3,20 +3,23 @@
 {% block title %}Elektroblog | Məqalə yaz  {% endblock %}
 {% block content %}
 	<div class="container mb-3" id="id_meqale_yaz">
-		<form method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{form.media}}
-			<div class="mb-3">
-				{% for field in form%}
-					<label class="form-label">{{field.label}}:</label>
-					{{field}}<br>
-				{%endfor%}
+		<div class="row">
+			<div class="col-md-2 col-lg-2"></div>
+			<div class="col-md-8 col-lg-8">
+				<form method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{%if errorMessage%}
+						<div>{{errorMessage}}</div>
+					{%endif%}
+					{{form.media}}
+					{{form.as_p}}
+				    <input class="btn btn-success" type="submit" value="Yadda saxla">
+				</form>
 			</div>
-		    <input class="btn btn-success" type="submit" value="Yadda saxla">
-		</form>
+			<div class="col-md-2 col-lg-2"></div>
+		</div>
 	</div>
 {% endblock %}
-
 {%block scripts%}
-	<script type="text/javascript" src="{%static 'Blog/script/meqaleyaz.js'%}"></script>
+<script src="{%static 'Blog/script/meqale_yaz.js'%}"></script>
 {%endblock%}

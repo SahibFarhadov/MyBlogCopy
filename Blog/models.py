@@ -16,13 +16,13 @@ class Category(models.Model):
         super().save(*args,**kwargs)
 
 class Blog(models.Model):
-    titleofblog = models.CharField(max_length=150,verbose_name="Başlıq")
+    titleofblog = models.CharField(max_length=150,verbose_name="Başlıq",blank=False)
     image = models.ImageField(upload_to="blogs/%Y/%m",verbose_name="Şəkil")
     description = RichTextUploadingField(config_name="fullconfig")
     is_active = models.BooleanField(verbose_name="Aktiv status")
     is_home = models.BooleanField(verbose_name="Ana səhifə aktiv")
     slug = models.SlugField(editable=False,unique=True,db_index=True,null=True)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,verbose_name="Kateqoriya seç")
     lastmodified = models.DateTimeField("Sonuncu deyişiklik tarixi",auto_now=True,blank=True,null=True)
     borndate = models.DateTimeField("Yaranma tarixi",auto_now_add=True,blank=True,null=True)
     snippet = models.CharField(max_length=50,default="Davamını oxumaq üçün klikləyin...",blank=True,null=True)

@@ -35,6 +35,24 @@ class BlogCreateView(CreateView):
 			return redirect("login")
 		return super().dispatch(request,*args,*kwargs)
 
+#meqale yaz funksiyasi
+def meqale_yaz(request):
+	errorMessage=""
+	context={
+		'form':AddBlogForm,
+		'errorMessage':errorMessage
+	}
+	if request.method=="POST":
+		titleofblog=request.POST["titleofblog"]
+		image=request.POST["image"]
+		description=request.POST["description"]
+		category=request.POST["category"]
+		errorMessage=titleofblog
+		return render(request,'Blog/meqale_yaz.html',context)
+	
+	return render(request,'Blog/meqale_yaz.html',context)
+
+
 #blog delete function
 def delete_blog(request,_slug):
 	if request.user.is_authenticated:
