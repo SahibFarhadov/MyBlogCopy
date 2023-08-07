@@ -25,8 +25,9 @@
                 <div class="col"></div>
                 <div class="col"></div>
             </div>
+            {%else%}
+                <div class="alert alert-primary my-3">Bu kateqoriya üzrə hələ məqalə yoxdur. <a class="link-primary" href="{url 'meqale_yaz'}">Buradan</a> məqalə yarada bilərsiniz.</div>
             {%endif%}
-
             {% for blog in blogs %}
                 {% if blog.is_active %}
                     {% include 'Blog/partials/_blog.html' %}
