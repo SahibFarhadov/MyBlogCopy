@@ -2,12 +2,12 @@
 {% load static %}
 {% block title %}Elektroblog | Məqaləni yenilə  {% endblock %}
 {%block content%}
-	<div class="container mb-5">
+	<div class="container mb-5" style="width:50%">
 		<form method="post" enctype="multipart/form-data">
 			{%csrf_token%}
 			{{form.media}}
 			{{form.as_p}}
-			<input type="submit" value="Yenilə">
+			<input class="btn btn-success" type="submit" value="Yenilə">
 		</form>
 	</div>
 {%endblock%}

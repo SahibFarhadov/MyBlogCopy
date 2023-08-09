@@ -11,7 +11,7 @@ from django.core.paginator import Paginator
 # blog update view
 class BlogUpdateView(UpdateView):
 	model=Blog
-	fields=["titleofblog","image","description","is_active","is_home","category",]
+	form_class=AddBlogForm
 	template_name="Blog/meqale_yenile.html"
 	success_url="/hesab/hesab-meqaleleri/"
 

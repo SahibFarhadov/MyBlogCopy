@@ -17,7 +17,7 @@ class UserForm(ModelForm):
 class MyUserForm(ModelForm):
 	class Meta:
 		model=MyUser
-		fields=["bio",]
+		fields=["bio",'sekil',]
 
 	def __init__(self,*args,**kwargs):
 		super().__init__(*args,**kwargs)

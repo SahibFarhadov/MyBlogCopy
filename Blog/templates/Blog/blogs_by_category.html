@@ -2,8 +2,8 @@
 {% block title %}Elektroblog | Kateqoriya | {{selectedCategory}}  {% endblock %}
 {% block content %}
 <div class="container-fluid mt-4">
-    <div class="row border">
-        <div class="col-md-3">
+    <div class="row">
+        <div class="col-md-3" class="pt-0">
             <div style="text-align:center">
                 <div>
                     <p>{%include 'Blog/partials/_categories.html'%}</p>
@@ -11,6 +11,7 @@
             </div>
         </div>
         <div class="col-md-9">
+            {%if blogs%}
             <div class="row">
                 <div class="col">
                 <div class="btn-group dropdown-center">
@@ -24,6 +25,8 @@
                 <div class="col"></div>
                 <div class="col"></div>
             </div>
+            {%endif%}
+
             {% for blog in blogs %}
                 {% if blog.is_active %}
                     {% include 'Blog/partials/_blog.html' %}

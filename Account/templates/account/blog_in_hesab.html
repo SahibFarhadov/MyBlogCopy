@@ -9,6 +9,7 @@
   
   <div class="container">
     <h3 class="mt-2 mb-3">Yazdığınız məqalələr buradadır</h3>
+    {%if blogs%}
     <div class="btn-group">
       <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sırala</a>
 
@@ -33,6 +34,7 @@
           {%endfor%}
       </ul>
     </div>
+    {%endif%}
   {%if blogs%} <!-- Bloglarin oldugunu yoxlayan blogun baslangici -->
   {%for blog in blogs%}
 <div class="card mb-3 mt-3 p-3">

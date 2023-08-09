@@ -13,6 +13,7 @@
             </div>
         </div>
         <div class="col-md-9">
+            {%if blogs%}
             <div class="row">
                 <div class="col">
                 <div class="btn-group dropdown-center">
@@ -26,6 +27,8 @@
                 <div class="col"></div>
                 <div class="col"></div>
             </div>
+            {%endif%}
+
             {% for blog in blogs %}
                 {% if blog.is_active %}
                     {% include 'Blog/partials/_blog.html' %}
