@@ -6,7 +6,7 @@ from Account.models import MyUser
 
 class Category(models.Model):
     class Meta:
-        verbose_name="Kateqoriyanı"
+        verbose_name="Kateqoriya"
         verbose_name_plural="Kateqoriyalar"
     name=models.CharField(max_length=100,verbose_name="Kateqoriya adı")
     slug=models.SlugField(null=False, editable=False,unique=True,db_index=True)
@@ -20,7 +20,7 @@ class Category(models.Model):
 
 class Blog(models.Model):
     class Meta:
-        verbose_name="Məqaləni"
+        verbose_name="Məqalə"
         verbose_name_plural="Məqalələr"
     titleofblog = models.CharField(max_length=150,verbose_name="Başlıq",blank=False)
     image = models.ImageField(upload_to="blogs/%Y/%m",verbose_name="Şəkil")
