@@ -85,7 +85,7 @@ DATABASES = {
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'SahibFarhadov$main',
         'USER': 'SahibFarhadov',
         'PASSWORD': 'Sahib123@#+',
