@@ -6,7 +6,7 @@
 
 {%block content%}
   {%include "account/partials/_hesab.html"%}
-  
+
   <div class="container">
     <h3 class="mt-2 mb-3">Yazdığınız məqalələr buradadır</h3>
     {%if blogs%}
@@ -88,9 +88,7 @@
   {%else%}
     <div class="alert alert-primary mt-3">Sizin hələ məqaləniz yoxdur. Aşağıdakı linkdən birini yarada bilərsiniz </div><hr>
     <h3>
-      <a href="{% url 'meqale_yaz' %}" class="btn btn-primary">
-        Yeni məqalə yaz
-      </a>
+      <a href="{% url 'meqale_yaz' %}" class="btn btn-primary">Məqalə yaz...</a>
     </h3>
   {%endif%}
 
