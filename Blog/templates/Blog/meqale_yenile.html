@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Elektroblog | Məqaləni yenilə  {% endblock %}
 {%block content%}
-	<div class="container mb-5" style="width:50%">
+	<div class="container mb-5">
 		<form method="post" enctype="multipart/form-data">
 			{%csrf_token%}
 			{{form.media}}
