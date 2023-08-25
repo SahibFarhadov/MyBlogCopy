@@ -149,3 +149,4 @@ CKEDITOR_CONFIGS={
         'width': 'full',
     }
 }
+
