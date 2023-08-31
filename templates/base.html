@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="az">
+<html lang="az" id="id_html">
     <head>
         <meta charset="UTF-8">
         <meta name="google-site-verification" content="-_1nwzK3l8H9--O9xN61hAW3nL6xRW630YThny5PZt0" />
@@ -11,16 +11,19 @@
         <link rel="stylesheet" href="{% static 'css/root.css' %}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-icons.css'%}">
+      <link rel="stylesheet" href="{%static 'css/dark_mode.css'%}">
         {% block styles %}{% endblock%}
         <title>{%block title%}{%endblock%}</title>
     </head>
-    <body>
+    <body id="id_body">
         {% include 'partials/_navbar.html' %}
+        
         {% block content %}{% endblock %}
-            <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        
+
         {%block scripts%}{%endblock%}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4029760396066666"
-     crossorigin="anonymous"></script>
+        <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%static 'scripts/dark_mode.js'%}"></script>
+        <script src="{%static 'scripts/root.js'%}"></script>
     </body>
 </html>
