@@ -23,10 +23,11 @@
           <ul class="navbar-nav me-auto ">
             {%if user.is_authenticated%}
               <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}">
+              <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}" style="display:flex;align-items:center">
+                <span class="material-icons-round" style="color:blue">create</span>
                 <strong class="navbarLink">
-                  Məqalə yaz
-                </strong>
+                    Məqalə yaz
+                <strong>
               </a>
             {%endif%}
             </li>
@@ -36,9 +37,7 @@
             {%if user.is_authenticated%}
               <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="{%url 'profile' %}">
-                    <strong class="navbarLink">
-                      Hesab
-                    </strong>
+                    <span class="material-icons-round" style="color:blue">settings</span>
                   </a>
               </li>
               <li class="nav-item me-0">
