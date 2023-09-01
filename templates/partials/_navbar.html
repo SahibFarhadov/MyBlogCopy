@@ -1,5 +1,5 @@
 {%load static%}
-  <nav class="navbar sticky-top navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="{%url 'home'%}" title="Elektroblog">
         <img src="{%static 'img/brand.png'%}"  alt="brand" class="d-inline-block" width="48" height="48">
@@ -54,9 +54,9 @@
               </li>
             {%else%}
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{%url 'register'%}">
+                <a class="nav-link" aria-current="page" href="{%url 'register'%}" style="text-decoration:none;">
                   <strong class="navbarLink">
-                    Qeydiyyatdan keç
+                    Qeydiyyat
                   </strong>
                 </a>
               </li>

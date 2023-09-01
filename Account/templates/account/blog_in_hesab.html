@@ -25,6 +25,7 @@
           <li><a class="dropdown-item {%if sort_string == 'lastmodifieddec'%} active {%endif%}" href="{%url 'meqale_sirala' 'lastmodifieddec' %}">Redaktə tarixinə görə azalan</a></li>
       </ul>
     </div>
+    {%if blogs and blogs|length > 10%}
     <div class="btn-group dropdown-center">
       <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Göstər</a>
 
@@ -34,6 +35,7 @@
           {%endfor%}
       </ul>
     </div>
+    {%endif%}
     {%endif%}
   {%if blogs%} <!-- Bloglarin oldugunu yoxlayan blogun baslangici -->
   {%for blog in blogs%}
@@ -92,7 +94,7 @@
     </h3>
   {%endif%}
 
-  {%if blogs%}
+  {%if blogs and blogs|length > 10%}
     <div class="row mb-3">
         <div class="col">
             {%include 'Blog/partials/_pagination.html'%}

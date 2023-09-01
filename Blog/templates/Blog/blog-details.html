@@ -7,7 +7,6 @@
     Elektroblog | Məqalə detalları | {{blog.title}}
 {% endblock %}
 
-
 {%block content%}
 <div class="container-fluid mt-4">
     <div class="row border pt-2">
@@ -18,7 +17,7 @@
                         {%if userBlog is not None%}
                             Yazan: <b>{{userBlog.first_name|title}} {{userBlog.last_name|title}}</b>
                         {%else%}
-                            <div class="h5">Yazan: <b>Naməlum</b></div>
+                            <div class="h5">Yazan: <b>Məlum deyil</b></div>
                         {%endif%}
                     </div>
                 <p>
@@ -27,29 +26,30 @@
                 </p>
             </div>
         </div>
-        <div class="col-md-7 col-sm-12 col-lg-7 col-xl-8 col-xxl-8">
+        <div class="col-md-9 col-sm-12 col-lg-7 col-xl-8 col-xxl-8" style="word-wrap: break-word;">
             <div class="content">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <h2 class="title text-center">{{blog.titleofblog}}</h2>
-                            <img class="img-fluid" src="{{blog.image.url}}" alt="{{blog.img}}">
+                            <img class="img-fluid" style="max-width: 90%" src="{{blog.image.url}}" alt="{{blog.img}}">
                         </div>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container-fluid">
                     {{blog.description|safe}}
                 </div>
             </div>
-        </div>
-        <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2" id="sag-element">
+        
+        <div class="col-md-12 col-lg-2 col-xl-2 col-xxl-2" id="sag-element">
             <div class="sag-element">
                 Sag elementler
             </div>
         </div>
+    </div>
     </div>
 </div>
 
