@@ -1,0 +1,9 @@
+.dark_mode,.light_mode{
+	cursor: pointer;
+}
+.light_mode{
+	display: none;
+}
+body{
+	transition: all ease 1s;
+}
