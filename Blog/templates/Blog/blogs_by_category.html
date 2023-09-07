@@ -11,21 +11,23 @@
             </div>
         </div>
         <div class="col-md-9">
-            {%if blogs and blogs|length > 10%}
-            <div class="row">
-                <div class="col">
-                <div class="btn-group dropdown-center">
-                  <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Göstər</a>
-                  <ul class="dropdown-menu">
-                      {%for gosterme_element in gosterme_elements %}
-                        <li><a href="?gosterme_sayi={{gosterme_element}}" class="dropdown-item {%if gosterme_element == gosterme_sayi%}active{%endif%}">{{gosterme_element}}</a></li>
-                      {%endfor%}
-                  </ul>
-                </div></div>
-                <div class="col"></div>
-                <div class="col"></div>
-            </div>
-            {%else%}
+            {%if blogs%}
+                {%if blogs|length > 10%}
+                <div class="row">
+                    <div class="col">
+                    <div class="btn-group dropdown-center">
+                      <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Göstər</a>
+                      <ul class="dropdown-menu">
+                          {%for gosterme_element in gosterme_elements %}
+                            <li><a href="?gosterme_sayi={{gosterme_element}}" class="dropdown-item {%if gosterme_element == gosterme_sayi%}active{%endif%}">{{gosterme_element}}</a></li>
+                          {%endfor%}
+                      </ul>
+                    </div></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+                {%endif%}
+            {% else %}
                 <div class="alert alert-primary my-3">Bu kateqoriya üzrə hələ məqalə yoxdur. <a class="link-primary" href="{%url 'meqale_yaz'%}">Buradan</a> məqalə yarada bilərsiniz.</div>
             {%endif%}
             {% for blog in blogs %}

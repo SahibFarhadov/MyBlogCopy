@@ -1,6 +1,6 @@
 {%load static%}
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg px-2">
+    <div class="container-fluid">
       <a class="navbar-brand" href="{%url 'home'%}" title="Elektroblog">
         <img src="{%static 'img/brand.png'%}"  alt="brand" class="d-inline-block" width="48" height="48">
         <strong style="font-size:25px;">Elektroblog</strong>
@@ -27,27 +27,26 @@
                 <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}" style="display:flex;align-items:center" title="Məqalə yazın...">
                   <span class="material-icons-round">create</span>
                   <strong class="navbarLink" style="text-decoration: none;">
-                      Məqalə yaz
+                      &nbspMəqalə yaz
                   </strong>
                 </a>
             {%endif%}
             </li>
           </ul>
-
           <ul class="navbar-nav ms-auto ">
             {%if user.is_authenticated%}
               <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="{%url 'profile' %}" >
                     <strong style="display:flex;align-items:center;text-decoration:none">
                         <span class="material-icons-round">settings</span>
-                        <span class="navbarLink">Tənzimləmələr</span>
+                        <span class="navbarLink">&nbspTənzimləmələr</span>
                     </strong>
                   </a>
               </li>
               <li class="nav-item me-0">
                 <a class="nav-link" aria-current="page" href="{%url 'logout'%}" title="Hesabdan çıx" >
                   <strong class="navbarLink" style="display:flex;align-items:center; text-decoration: none;">
-                    <span style="margin-right: 3px;">Hesabdan çıx</span>
+                    <span style="margin-right: 3px;">Hesabdan çıx&nbsp</span>
                     <span class="material-icons-round">logout</span>
                   </strong>
                 </a>
@@ -69,7 +68,8 @@
               </li>
             {%endif%}
             <li class="nav-item">
-                <div class="nav-link" aria-current="page" href="{%url 'profile' %}" id="id_mode_container">
+                <div class="nav-link" aria-current="page" href="{%url 'profile' %}" id="id_mode_container" style="display:flex;align-items:center">
+                  <span style="font-size:20px;font-weight: 600;">Rejim:&nbsp</span>
                   <span class="material-icons-round dark_mode" id="id_dark_mode">dark_mode</span>
                   <span class="material-icons-round light_mode" id="id_light_mode">light_mode</span>
                 </div>
