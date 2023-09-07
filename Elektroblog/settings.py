@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&-iws8k(1vndf7z!+ck2@-ohmj^v&whv#@2%rz0+iq$oafd1j%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -80,17 +80,17 @@ WSGI_APPLICATION = 'Elektroblog.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-   # 'default': {
-   #     'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-   # }
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SahibFarhadov$main',
-        'USER': 'SahibFarhadov',
-        'PASSWORD': 'Sahib123@#+',
-        'HOST': 'SahibFarhadov.mysql.pythonanywhere-services.com'
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+   }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'SahibFarhadov$main',
+    #     'USER': 'SahibFarhadov',
+    #     'PASSWORD': 'Sahib123@#+',
+    #     'HOST': 'SahibFarhadov.mysql.pythonanywhere-services.com'
+    # }
 }
 
 

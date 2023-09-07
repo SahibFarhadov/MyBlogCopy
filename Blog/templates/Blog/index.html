@@ -2,7 +2,11 @@
 {% load static %}
 {% block styles %}{% endblock  %}
 {% block title %}Elektroblog | Əsas səhifə{% endblock %}
-
+{%block meta_elements%}
+    {%if user.is_authenticated%}
+    <meta name="author" content="{{user.get_full_name|title}}">
+    {%endif%}
+{%endblock%}
 {% block content %}
 
 <div class="container-fluid mt-4">
