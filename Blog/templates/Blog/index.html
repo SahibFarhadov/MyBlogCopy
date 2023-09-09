@@ -2,12 +2,6 @@
 {% load static %}
 {% block styles %}{% endblock  %}
 {% block title %}Elektroblog | Əsas səhifə{% endblock %}
-{%block meta_elements%}
-    {%if user.is_authenticated%}
-    <meta name="author" content="{{user.get_full_name|title}}">
-    {%endif%}
-{%endblock%}
-
 {% block meta_elements %}
     <meta name="creator" content="Elektroblog by Sahib Farhadov">
     <meta name="keyword" content="Elektroblog, elektrik enerjisi, avtomatika, proqramlaşdırma">
