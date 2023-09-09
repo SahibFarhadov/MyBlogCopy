@@ -6,13 +6,14 @@
         <meta name="google-site-verification" content="-_1nwzK3l8H9--O9xN61hAW3nL6xRW630YThny5PZt0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         {%block meta_elements%}{%endblock%}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
         <link rel="shortcut icon" href="{% static 'img/brand.png' %}" type="image/x-icon">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
         <link rel="stylesheet" href="{% static 'css/root.css' %}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet">
       <link rel="stylesheet" href="{%static 'css/dark_mode.css'%}">
+      {% block meta_elements %}{% endblock %}
         {% block styles %}{% endblock%}
         <title>{%block title%}{%endblock%}</title>
     </head>

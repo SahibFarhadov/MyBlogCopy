@@ -7,3 +7,8 @@
 body{
 	transition: all ease 1s;
 }
+#id_dark_mode,#id_light_mode{
+	border:1px solid lightgreen;
+	padding:5px;
+	border-radius: 20px;
+}
