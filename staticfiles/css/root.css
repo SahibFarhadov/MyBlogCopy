@@ -1,29 +1,45 @@
-.nav-item .nav-link strong:hover{
-    text-decoration: underline blue solid 2px;
-}
 .navbarLink{
-    font-size:20px;
+    font-size:23px;
+}
+.nav-item .nav-link span.yaz{
+    display: none;
+    margin-left: 10px;
+}
+.nav-item .nav-link span.ayarlar{
+    display: none;
+    margin-left: 10px;
+}
+.nav-item .nav-link span.cixish{
+    display: none;
+    margin-left: 10px;
+}
+.nav-item .nav-link span.rejim{
+    display: none;
+    margin-left: 10px;
 }
 .kateqoriyaText{
     color:green
-}
-.footer1{
-    position:relative;
-    bottom: 0px;
-    right: 0px;
-    width: 100%;
-    font-size: 16px;
-}
-.mailme address{
-    border-left: 4px solid red!important;
-    padding-left:10px;
-}
-.mailme p{
-    padding-left:10px;
 }
 
 @media screen and (max-width: 991px) {
   #mvOffcanvasLink{
     display: none;
   }
+  .nav-item .nav-link span.yaz{
+    display: inline;
+    margin-left: 10px;
+}
+
+.nav-item .nav-link span.ayarlar{
+    display: inline;
+    margin-left: 10px;
+}
+.nav-item .nav-link span.cixish{
+    display: inline;
+    margin-left: 10px;
+}
+.nav-item .nav-link span.rejim{
+    display: inline;
+    margin-left: 10px;
+}
 }
