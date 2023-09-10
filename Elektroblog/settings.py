@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Elektroblog.wsgi.application'
+WSGI_APPLICAkTION = 'Elektroblog.wsgi.application'
 
 
 # Database

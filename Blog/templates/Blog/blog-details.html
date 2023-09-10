@@ -6,7 +6,11 @@
 {% block title %}
     Elektroblog | Məqalə detalları | {{blog.title}}
 {% endblock %}
-
+{%block meta_elements%}
+<meta name="author" content="{{userBlog.first_name|title}} {{userBlog.last_name|title}}">
+<meta name="keywords" content="Elektroblog, elektrik cereyani,enerji,{{blog.titleofblog}}">
+<meta name>
+{%endblock%}
 
 {%block content%}
 <div class="container-fluid mt-4">

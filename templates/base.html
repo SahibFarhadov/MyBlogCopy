@@ -27,5 +27,9 @@
         <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
         <script src="{%static 'scripts/dark_mode.js'%}"></script>
         <script src="{%static 'scripts/root.js'%}"></script>
+        <script>
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script>
     </body>
 </html>

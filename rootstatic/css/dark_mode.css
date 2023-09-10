@@ -9,6 +9,6 @@ body{
 }
 #id_dark_mode,#id_light_mode{
 	border:1px solid lightgreen;
-	padding:5px;
+	padding:2px;
 	border-radius: 20px;
 }

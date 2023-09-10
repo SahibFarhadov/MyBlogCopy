@@ -1,5 +1,10 @@
 .navbarLink{
-    font-size:20px;
+    font-size:23px;
+}
+.nav-item .nav-link a span.yaz{
+    display: block;
+    border: 1px solid red;
+    margin-left: 10px;
 }
 .kateqoriyaText{
     color:green
