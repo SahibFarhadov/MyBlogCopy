@@ -12,7 +12,18 @@
 {%endblock%}
 
 {%block content%}
-<div class="container-fluid mt-4">
+<div class="container-fluid mt-4" id="id_log_details_container">
+    <div class="row">
+        <div class="col">
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{%url 'home'%}">Əsas</a></li>
+                <li class="breadcrumb-item" ><a href="{%url 'blogs_by_category' blog.category.slug%}">{{blog.category}}</a></li>
+                <li class="breadcrumb-item active">{{blog.titleofblog}}</li>
+              </ol>
+            </nav>
+        </div>
+    </div>
     <div class="row border pt-2">
         <div class="col-md-3 col-lg-3 col-xl-2 col-xxl-2" id="sol-element">
             <div class="sol-element" style="margin-left:0px;margin-right:0px">
@@ -36,17 +47,23 @@
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <h2 class="title text-center">{{blog.titleofblog}}</h2>
                             <img class="img-fluid" src="{{blog.image.url}}" alt="{{blog.img}}">
                         </div>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
+            </div>
+            <div class="container-fluid mt-4">
+                <div class="row">
+                    <h2 class="title text-center">{{blog.titleofblog}}</h2>
                 </div>
-                <div class="container-fluid">
-                    {{blog.description|safe}}
+                <div class="row">
+                    <div class="col">
+                        {{blog.description|safe}}
+                    </div>
                 </div>
             </div>
+        </div>
         
         <div class="col-md-12 col-lg-2 col-xl-2 col-xxl-2" id="sag-element">
             <div class="sag-element">

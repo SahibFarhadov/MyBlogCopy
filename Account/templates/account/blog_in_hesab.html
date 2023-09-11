@@ -62,7 +62,6 @@
           <p class="card-text">
             <a href="{%url 'meqale_yenile' blog.slug%}" class="btn btn-success">Redaktə et</a>
             <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#silModal">Sil</button>
-
             <div class="modal fade" id="silModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -71,10 +70,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <strong>{{blog.titleofblog}}</strong> başlıqlı məqalə silinəcək. Bu əməliyyat geri qaytarıla bilməz. Yenə də silmək istəyirsiniz?
+                  <strong>{{blog.titleofblog}}</strong> başlıqlı məqalə silinəcək. Bu əməliyyat geri qaytarıla bilməz. Buna baxmayaraq silinsin?
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Yox, məqalə dəyərlidir</button>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Xeyr, məqalə dəyərlidir</button>
                   <a type="button" class="btn btn-danger" href="{% url 'delete_blog' blog.slug %}">Sil</a>
                 </div>
               </div>
