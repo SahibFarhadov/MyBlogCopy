@@ -24,8 +24,8 @@
           <ul class="navbar-nav me-auto ">
             {%if user.is_authenticated%}
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}" style="display:flex;align-items:center">
-                  <strong>
+                <a class="nav-link" aria-current="page" href="{%url 'meqale_yaz'%}">
+                  <strong style="display:flex;align-items:center;">
                     <span class="material-icons-round" data-bs-toggle="tooltip" data-bs-title="Yaz" data-bs-placement="bottom">create</span>
                     <span class="yaz navbarLink">Yaz</span>
                   </strong>
@@ -36,7 +36,7 @@
           <ul class="navbar-nav ms-auto ">
             {%if user.is_authenticated%}
               <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{%url 'profile' %}" >
+                  <a class="nav-link" aria-current="page" href="{%url 'profile' %}">
                     <strong style="display:flex;align-items:center;">
                         <span class="material-icons-round" data-bs-toggle="tooltip" data-bs-title="Ayarlar" data-bs-placement="bottom">settings</span>
                         <span class="ayarlar navbarLink">Ayarlar</span>
