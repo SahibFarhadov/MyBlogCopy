@@ -7,13 +7,10 @@ window.addEventListener("load",function(){
 		element_html.setAttribute("data-bs-theme","dark");
 		element_light_mode.style.display="inline";
 		element_dark_mode.style.display="none";
-		console.log("in dark");
 	}else{
 		element_html.setAttribute("data-bs-theme","light");
 		element_dark_mode.style.display="inline";
 		element_light_mode.style.display="none";
-		console.log("in light");
-
 	}
 });
 
@@ -23,14 +20,12 @@ function change_theme(mode_element){
 		localStorage.setItem("mode","dark");
 		mode_element.style.display="none";
 		element_light_mode.style.display="inline";
-		console.log("dark moda kec");
 
 	}else{
 		element_html.setAttribute("data-bs-theme","light");
 		localStorage.setItem("mode","light");
 		mode_element.style.display="none";
 		element_dark_mode.style.display="inline";
-		console.log("light moda kec");
 
 	}
 }
