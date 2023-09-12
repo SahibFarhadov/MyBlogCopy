@@ -33,7 +33,8 @@ class Blog(models.Model):
     borndate = models.DateTimeField("Yaranma tarixi",auto_now_add=True,blank=True,null=True)
     snippet = models.CharField(max_length=50,default="Davamını oxumaq üçün klikləyin...",blank=True,null=True)
     user=models.ForeignKey(MyUser,on_delete=models.CASCADE,null=True)
-
+    likedCount=models.PositiveIntegerField(verbose_name="Bəyənmə sayı",default=0)
+    unlikedCount=models.PositiveIntegerField(verbose_name="Bəyənmə sayı",default=0)
 
     def __str__(self):
         return self.titleofblog

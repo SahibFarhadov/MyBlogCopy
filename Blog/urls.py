@@ -11,4 +11,5 @@ urlpatterns=[
     path("meqale_yaz",views.BlogCreateView.as_view(),name="meqale_yaz"),
     path("meqale/yenile/<slug>/",views.BlogUpdateView.as_view(),name="meqale_yenile"),
     path("meqale/sil/<slug:_slug>",views.delete_blog,name="delete_blog"),
+    path("meqale/<slug:_slug>/deyerlendirmesayi",views.deyerlendirmesayi,name="deyerlendirmesayi"),
 ]

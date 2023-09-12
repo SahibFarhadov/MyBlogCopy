@@ -10,6 +10,9 @@
 <meta name="author" content="{{userBlog.first_name|title}} {{userBlog.last_name|title}}">
 <meta name="keywords" content="Elektroblog, elektrik cereyani,enerji,{{blog.titleofblog}}">
 {%endblock%}
+{%block scripts%}
+    <script src="{%static 'Blog/script/blog-details.js'%}"></script>
+{%endblock%}
 
 {%block content%}
 <div class="container-fluid mt-4" id="id_log_details_container">
@@ -66,13 +69,36 @@
         </div>
         
         <div class="col-md-12 col-lg-2 col-xl-2 col-xxl-2" id="sag-element">
-            <div class="sag-element">
-                Sag elementler
+            <div class="sag-element" style="border:1px solid blue">
+                <div class="container-fluid" style="display:flex; align-items: center;">
+                    <span>Dəyərləndirmə: </span>
+                    <span class="material-icons-round like">thumb_up</span>
+                    <span class="material-icons-round dislike">thumb_down</span>
+                </div>
+                <div class="container-fluid" id="id_beyenme_container">
+                    <span class="beyenme">Bəyənmə: <span id="id_beyenmesayi">10</span></span>
+                    <span class="beyenmeme">Bəyənməmə: <span id="id_beyenmemesayi">10</span></span>
+                </div>
             </div>
         </div>
     </div>
     </div>
 </div>
+<script>
+    let containerDeyerlendirme=document.getElementById("id_beyenme_container");
+    let beyenmeElement=document.getElementById("id_beyenmesayi");
+    let beyenmemeElement=document.getElementById("id_beyenmemesayi");
 
+    window.addEventListener("load",()=>{
+        const xhttp=new XMLHttpRequest();
+        xhttp.onload=function (){
+            let response=JSON.parse(xhttp.responseText);
+            beyenmeElement.innerText=response.likedCount;
+            beyenmemeElement.innerText=response.unlikedCount;
+        }
+        xhttp.open("GET","{%url 'deyerlendirmesayi' blog.slug %}",true);
+        xhttp.send();
+    });
+</script>
 {% endblock %}
 

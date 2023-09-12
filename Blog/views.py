@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from Account import views as account_views
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.core import serializers
 
 
 # blog update view
@@ -130,3 +132,8 @@ def blogs_by_category(request,_slug):
 		"gosterme_sayi":int(gosterme_sayi),
 	}
 	return render(request,"Blog/blogs_by_category.html",context)
+
+# blog deyerlendirme sayini gosteren funksiya
+def deyerlendirmesayi(request,_slug):
+	currentBlog=Blog.objects.get(slug=_slug)
+	return JsonResponse({"likedCount":currentBlog.likedCount,"unlikedCount":currentBlog.unlikedCount})
