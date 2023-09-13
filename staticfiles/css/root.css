@@ -43,9 +43,3 @@
     margin-left: 10px;
 }
 }
-.dislike,.like{
-    margin-left: 10px;
-}
-.dislike:hover,.like:hover{
-    cursor: pointer;
-}

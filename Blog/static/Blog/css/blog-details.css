@@ -1,3 +1,9 @@
 span.beyenme,span.beyenmeme{
 	display: block;
 }
+.dislike,.like{
+    margin-left: 20px;
+}
+.dislike:hover,.like:hover{
+    cursor: pointer;
+}
