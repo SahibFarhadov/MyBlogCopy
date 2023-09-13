@@ -19,13 +19,15 @@
       <link rel="stylesheet" href="{%static 'css/dark_mode.css'%}">
       <link rel="stylesheet" type="text/css" href="{%static 'Blog/css/_categories.css'%}">
         {% block styles %}{% endblock%}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4029760396066666"
+     crossorigin="anonymous"></script>
         <title>{%block title%}{%endblock%}</title>
     </head>
     <body id="id_body">
         {% include 'partials/_navbar.html' %}
-        
+
         {% block content %}{% endblock %}
-        
+
 
         {%block scripts%}{%endblock%}
         <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
