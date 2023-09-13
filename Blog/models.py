@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.text import slugify
+from slugify import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 from Account.models import MyUser
@@ -40,7 +40,7 @@ class Blog(models.Model):
         return self.titleofblog
     
     def save(self,*args,**kwargs):
-        self.slug = slugify(self.titleofblog)
+        self.slug = slugify(self.titleofblog,replacements=[['Ə','e'],['ə','e']])
         super().save(*args,**kwargs)
 
     def get_absolute_url(self):
