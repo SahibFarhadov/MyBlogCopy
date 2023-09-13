@@ -14,7 +14,7 @@
             {%if user.is_authenticated%}
               <div>Salam, <b>{{user.first_name|title}}</b></div>
             {%else%}
-              <div>Salam, Qonaq</div>
+              <div>Salam, Ziyarətçi</div>
             {%endif%}
           </h3>
           <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close" style="font-size:20px;"></button>
@@ -54,21 +54,21 @@
             {%else%}
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{%url 'register'%}" style="text-decoration:none;">
-                  <strong class="navbarLink">
+                  <strong style="display:flex;align-items:center;" class="navbarLink">
                     Qeydiyyat
                   </strong>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{%url 'login'%}">
-                  <strong class="navbarLink">
+                  <strong style="display:flex;align-items:center;" class="navbarLink">
                     Daxil ol
                   </strong>
                 </a>
               </li>
             {%endif%}
-            <li class="nav-item">
-                <a href="#" class="nav-link" aria-current="page" id="id_mode_container" data-bs-title="Rejim" data-bs-toggle="tooltip" data-bs-placement="bottom">
+            <li class="nav-item" style="display:flex;align-items:center;">
+                <a href="#" class="nav-link" aria-current="page" id="id_mode_container" data-bs-title="Rejim" data-bs-toggle="tooltip" data-bs-placement="bottom" >
                   <strong style="display:flex;align-items:center;">
                     <span class="material-icons-round dark_mode" id="id_dark_mode">dark_mode</span>
                     <span class="material-icons-round light_mode" id="id_light_mode">light_mode</span>
